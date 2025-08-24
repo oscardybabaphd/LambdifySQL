@@ -1,0 +1,187 @@
+
+0. SELECT specific columns with Column<> method:
+SELECT product.[Name], product.[Price] AS [ProductPrice], product.[CategoryId]
+FROM [Product] AS product
+WHERE (product.[IsActive] = @p0)
+ORDER BY product.[Name] ASC
+Parameters: @p0=True
+
+1. Basic SELECT query:
+SELECT product.*
+FROM "Product" AS product
+WHERE (((product."Price" > @p0) AND product."IsActive")) OR ((product."Qty" < @p1))
+ORDER BY product."Name" ASC
+LIMIT 10
+Parameters: @p0=100, @p1=5
+
+2. Complex WHERE conditions:
+SELECT product.*
+FROM [Product] AS product
+WHERE (product.[Name] LIKE @p0 OR product.[Name] IN (@p1, @p2, @p3)) AND product.[CategoryId] IN (@p4, @p5, @p6) AND ((product.[Price] >= @p7) AND (product.[Price] <= @p8))
+ORDER BY product.[Price] ASC
+Parameters: @p0=%electronics%, @p1=laptop, @p2=phone, @p3=tablet, @p4=1, @p5=2, @p6=3, @p7=100, @p8=1000
+
+3. UPDATE query:
+UPDATE product
+SET product.[Price] = @p0, product.[IsActive] = @p1
+FROM [Product] AS product
+WHERE ((product.[CategoryId] = @p2) AND (product.[Price] < @p3))
+Parameters: @p0=199.99, @p1=True, @p2=1, @p3=200
+
+4. INSERT query:
+INSERT INTO [Product]
+([Name], [Qty], [Price], [CategoryId], [ExtraId], [CreatedAt], [IsActive])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+Parameters: @p0=New Laptop, @p1=10, @p2=999.99, @p3=1, @p4=1, @p5=01/01/0001 00:00:00, @p6=True
+
+5. DELETE query:
+DELETE product
+FROM [Product] AS product
+WHERE (product.[IsActive] = @p0) AND (product.[CreatedAt] < DATEADD(year, @p1, @p2))
+Parameters: @p0=False, @p1=-1, @p2=22/08/2025 21:54:54
+
+6. Raw SQL example:
+SELECT * FROM Product WHERE Price BETWEEN @minPrice AND @maxPrice
+Parameters: @minPrice=100, @maxPrice=500
+
+SELECT product.[CategoryId], COUNT(*) AS [ProductCount], SUM(product.[Price]) AS [TotalPrice], AVG(product.[Price]) AS [AvgPrice]
+FROM [Product] AS product
+WHERE (product.[IsActive] = @p0)
+GROUP BY product.[CategoryId]
+Parameters: @p0=True
+
+SELECT product.[Name], product.[Price], ROW_NUMBER() OVER (PARTITION BY product.[CategoryId] ORDER BY product.[Price]) AS [RowNum], RANK() OVER (PARTITION BY product.[CategoryId] ORDER BY product.[Price]) AS [PriceRank]
+FROM [Product] AS product
+WHERE (product.[IsActive] = @p0)
+Parameters: @p0=False
+
+=== Boolean WHERE Clauses ===
+Simple boolean (p.IsActive):
+SELECT product.*
+FROM [Product] AS product
+WHERE (product.[IsActive] = @p0)
+Parameters: @p0=True
+
+Negated boolean (!p.IsActive):
+SELECT product.*
+FROM [Product] AS product
+WHERE (product.[IsActive] = @p0)
+Parameters: @p0=False
+
+=== Advanced CTE Example ===
+WITH TopProducts AS (SELECT TOP (10) product.*
+FROM [Product] AS product
+WHERE (product.[Qty] >= @p0))
+SELECT product.*
+FROM [Product] AS product
+WHERE (product.[CategoryId] = @p1)
+Parameters: @p0=1, @p1=2
+
+=== INNER JOIN Examples ===
+7. INNER JOIN - Products with Categories using Column selection:
+SELECT product.[Name] AS [ProductName], category.[Name] AS [CategoryName], product.[Price]
+FROM [Product] AS product
+INNER JOIN [Category] AS category ON product.Id = category.Id
+WHERE (product.[IsActive] = @p0)
+ORDER BY product.[Name] ASC
+Parameters: @p0=True
+
+8. Multiple JOINs with Aliases and specific Column selection:
+SELECT product.[Name] AS [ProductName], cat.[CategoryName] AS [CategoryName], details.[Color] AS [ProductColor], product.[Price]
+FROM [Product] AS product
+INNER JOIN [Category] AS cat ON product.Id = cat.Id
+LEFT JOIN [ProductExtraDetails] AS details ON product.Id = details.Id
+WHERE (product.[Price] > @p0)
+ORDER BY product.[Price] ASC, product.[Name] ASC
+Parameters: @p0=100
+
+=== Subquery Examples ===
+9. WHERE IN with Subquery:
+SELECT product.*
+FROM [Product] AS product
+WHERE product.[CategoryId] IN (SELECT product.[CategoryId] FROM (SELECT product.[CategoryId]
+FROM [Product] AS product
+WHERE (product.[Price] > @p0)
+GROUP BY product.[CategoryId]) subq)
+ORDER BY product.[Name] ASC
+Parameters: @p0=500
+
+10. Subquery in SELECT clause:
+SELECT TOP (5) (SELECT COUNT(*) AS [Count]
+FROM [Product] AS product
+WHERE (product.[CategoryId] = @p0)) AS CategoryProductCount
+FROM [Product] AS product
+WHERE (product.[IsActive] = @p0)
+Parameters: @p0=True
+
+=== Advanced CTE Examples ===
+11. Recursive CTE Example:
+WITH CategoryHierarchy AS (SELECT category.*
+FROM [Category] AS category
+WHERE (category.[Id] = @p0) UNION ALL SELECT category.*
+FROM [Category] AS category
+INNER JOIN [Category] AS category ON category.Id = category.Id
+WHERE (category.[IsActive] = @p0))
+SELECT category.*
+FROM [Category] AS category
+Parameters: @p0=True
+
+12. Multiple CTEs Example:
+WITH ActiveProducts AS (SELECT product.*
+FROM [Product] AS product
+WHERE (product.[IsActive] AND (product.[Price] > @p0))), ActiveCategories AS (SELECT category.*
+FROM [Category] AS category
+WHERE (category.[IsActive] = @p1))
+SELECT product.*
+FROM [Product] AS product
+INNER JOIN [Category] AS category ON product.Id = category.Id
+WHERE (product.[Qty] > @p2)
+Parameters: @p0=0, @p1=True, @p2=0
+
+=== Window Functions with JOINs ===
+13. Window Functions with JOINs:
+SELECT ROW_NUMBER() OVER (PARTITION BY p.CategoryId ORDER BY p.Price DESC) AS PriceRank, AVG(p.Price) OVER (PARTITION BY p.CategoryId) AS AvgCategoryPrice
+FROM [Product] AS product
+INNER JOIN [Category] AS category ON product.Id = category.Id
+WHERE (product.[IsActive] = @p0)
+ORDER BY product.[CategoryId] ASC, product.[Price] ASC
+Parameters: @p0=True
+
+=== Complex Query with Everything ===
+14. Ultimate Complex Query:
+WITH HighValueProducts AS (SELECT product.*
+FROM [Product] AS product
+WHERE ((product.[Price] > @p0) AND product.[IsActive])), CategoryStats AS (SELECT product.[CategoryId], COUNT(*) AS [ProductCount], AVG(product.[Price]) AS [AvgPrice], SUM(product.[Qty]) AS [TotalQty]
+FROM [Product] AS product
+GROUP BY product.[CategoryId])
+SELECT RANK() OVER (PARTITION BY p.CategoryId ORDER BY p.Price DESC) AS PriceRank, COUNT(*) OVER (PARTITION BY p.CategoryId) AS CategoryProductCount
+FROM [Product] AS product
+INNER JOIN [Category] AS cat ON product.Id = cat.Id
+LEFT JOIN [ProductExtraDetails] AS details ON product.Id = details.Id
+WHERE (product.[IsActive] = @p1) AND (category.[IsActive] = @p1)
+HAVING (product.[Price] > @p2)
+ORDER BY product.[CategoryId] ASC, product.[Price] ASC
+Parameters: @p0=300, @p1=True, @p2=100
+
+=== Raw SQL with Custom JOINs ===
+15. Custom Raw SQL with Parameters:
+
+                WITH RecentProducts AS (
+                    SELECT p.*, c.Name as CategoryName
+                    FROM Product p
+                    INNER JOIN Category c ON p.CategoryId = c.Id
+                    WHERE p.CreatedAt >= @startDate AND p.IsActive = @isActive
+                ),
+                CategoryTotals AS (
+                    SELECT CategoryId, COUNT(*) as ProductCount, AVG(Price) as AvgPrice
+                    FROM Product
+                    WHERE IsActive = @isActive
+                    GROUP BY CategoryId
+                )
+                SELECT rp.*, ct.ProductCount, ct.AvgPrice,
+                       ROW_NUMBER() OVER (PARTITION BY rp.CategoryId ORDER BY rp.Price DESC) as PriceRank
+                FROM RecentProducts rp
+                INNER JOIN CategoryTotals ct ON rp.CategoryId = ct.CategoryId
+                WHERE rp.Price >= @minPrice
+                ORDER BY rp.CategoryId, rp.Price DESC
+Parameters: @startDate=22/02/2025 21:56:09, @isActive=True, @minPrice=50.00
