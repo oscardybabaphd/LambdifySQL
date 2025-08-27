@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LambdifySQL - Fluent SQL Query Builder Documentation</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -18,7 +22,9 @@
                 <span>LambdifySQL</span>
             </div>
             <div class="nav-links">
-                <a href="#features" class="nav-link">Features</a>
+                <a href="#features" class="nav-link">Features
+                   
+                </a>
                 <a href="#installation" class="nav-link">Installation</a>
                 <a href="#examples" class="nav-link">Examples</a>
                 <a href="#configuration" class="nav-link">Configuration</a>
@@ -130,7 +136,8 @@
                 <h1 class="hero-title">LambdifySQL</h1>
                 <p class="hero-subtitle">Fluent SQL Query Builder</p>
                 <p class="hero-description">
-                    A powerful, fluent C# library that converts lambda expressions to SQL queries with support for multiple database dialects and advanced SQL features.
+                    A powerful, fluent C# library that converts lambda expressions to SQL queries with support for
+                    multiple database dialects and advanced SQL features.
                 </p>
                 <div class="hero-buttons">
                     <a href="#installation" class="btn btn-primary">
@@ -149,6 +156,11 @@
         <section class="section" id="features">
             <div class="container">
                 <h2 class="section-title">Features</h2>
+                <div class="warning-banner" style="background-color: #fff4e5; color: #a15c00; border: 1.5px solid #ffa726; border-radius: 6px; padding: 12px 18px; margin-bottom: 24px; display: flex; align-items: center; font-weight: 500;">
+                    <i class="fas fa-exclamation-circle" style="margin-right: 10px; font-size: 1.3em;"></i>
+                    Experimental features such as CTEs may not be fully stable. Use with
+                    caution in production environments.
+                </div>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -200,7 +212,7 @@
         <section class="section" id="installation">
             <div class="container">
                 <h2 class="section-title">Installation & Setup</h2>
-                
+
                 <div class="installation-grid">
                     <div class="install-method">
                         <h3>Package Manager Console</h3>
@@ -212,11 +224,12 @@
                                 </button>
                             </div>
                             <div class="code-editor">
-                                <pre class="line-numbers"><code id="install-nuget" class="language-powershell">Install-Package LambdifySQL</code></pre>
+                                <pre
+                                    class="line-numbers"><code id="install-nuget" class="language-powershell">Install-Package LambdifySQL</code></pre>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="install-method">
                         <h3>.NET CLI</h3>
                         <div class="code-example">
@@ -227,11 +240,12 @@
                                 </button>
                             </div>
                             <div class="code-editor">
-                                <pre class="line-numbers"><code id="install-cli" class="language-bash">dotnet add package LambdifySQL</code></pre>
+                                <pre
+                                    class="line-numbers"><code id="install-cli" class="language-bash">dotnet add package LambdifySQL</code></pre>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="install-method">
                         <h3>PackageReference</h3>
                         <div class="code-example">
@@ -242,7 +256,8 @@
                                 </button>
                             </div>
                             <div class="code-editor">
-                                <pre class="line-numbers"><code id="install-xml" class="language-xml">&lt;PackageReference Include="LambdifySQL" Version="1.0.0" /&gt;</code></pre>
+                                <pre
+                                    class="line-numbers"><code id="install-xml" class="language-xml">&lt;PackageReference Include="LambdifySQL" Version="1.0.0" /&gt;</code></pre>
                             </div>
                         </div>
                     </div>
@@ -253,7 +268,8 @@
                     <ul class="requirements-list">
                         <li><i class="fas fa-check"></i> .NET 8.0 or higher</li>
                         <li><i class="fas fa-check"></i> C# 12.0 language features</li>
-                        <li><i class="fas fa-check"></i> Entity Framework Core (optional, for database connectivity)</li>
+                        <li><i class="fas fa-check"></i> Entity Framework Core (optional, for database connectivity)
+                        </li>
                         <li><i class="fas fa-check"></i> System.Linq.Expressions support</li>
                     </ul>
                 </div>
@@ -283,7 +299,7 @@ using LambdifySQL.Resolver;</code></pre>
         <section class="section" id="quick-start">
             <div class="container">
                 <h2 class="section-title">Quick Start Guide</h2>
-                
+
                 <div class="quickstart-steps">
                     <div class="step-item">
                         <div class="step-number">1</div>
@@ -444,7 +460,8 @@ Parameters: @p0=100, @p1=5</code></pre>
         <section class="section" id="examples">
             <div class="container">
                 <h2 class="section-title">Comprehensive Examples</h2>
-                <p class="section-description">Real examples from the README with actual SQL outputs. All examples are dynamically loaded from JSON.</p>
+                <p class="section-description">Real examples from the README with actual SQL outputs. All examples are
+                    dynamically loaded from JSON.</p>
 
                 <!-- Filter Controls -->
                 <div class="examples-controls">
@@ -469,19 +486,19 @@ Parameters: @p0=100, @p1=5</code></pre>
                 </div>
             </div>
         </section>
-                    <!-- SELECT Operations -->
-                    <div class="operation-category">
-                        <h3><i class="fas fa-search"></i> SELECT Operations</h3>
-                        
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">Basic SELECT with Conditions</span>
-                                <button class="copy-btn" data-clipboard-target="#basic-select-ops">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="basic-select-ops" class="language-csharp">// Simple SELECT with WHERE conditions
+        <!-- SELECT Operations -->
+        <div class="operation-category">
+            <h3><i class="fas fa-search"></i> SELECT Operations</h3>
+
+            <div class="code-example">
+                <div class="code-header">
+                    <span class="code-language">Basic SELECT with Conditions</span>
+                    <button class="copy-btn" data-clipboard-target="#basic-select-ops">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div class="code-editor">
+                    <pre class="line-numbers"><code id="basic-select-ops" class="language-csharp">// Simple SELECT with WHERE conditions
 
 var activeProducts = SqlQuery.Select<Product>()
     .Where(p => p.IsActive == true)
@@ -503,11 +520,11 @@ var productSummary = SqlQuery.Select<Product>()
         .Column(p => p.Price)
         .Where(p => p.IsActive == true);
   </code></pre>
-                            </div>
-                            <div class="output-display">
-                                <div class="output-header">Generated SQL Output:</div>
-                                <div class="output-content">
-                                    <pre><code class="language-sql">SELECT p.ProductId, p.ProductName, p.UnitPrice, p.Quantity, p.CategoryId, p.ExtraId, p.CreatedDate, p.ModifiedDate, p.IsActive, p.SKU, p.Weight 
+                </div>
+                <div class="output-display">
+                    <div class="output-header">Generated SQL Output:</div>
+                    <div class="output-content">
+                        <pre><code class="language-sql">SELECT p.ProductId, p.ProductName, p.UnitPrice, p.Quantity, p.CategoryId, p.ExtraId, p.CreatedDate, p.ModifiedDate, p.IsActive, p.SKU, p.Weight 
 SELECT TOP (10) product.*
 FROM [Product] AS product
 WHERE (product.[IsActive] = @p0) AND (product.[Price] > @p1)
@@ -529,19 +546,19 @@ __________________________
 Parameters: @p0=True
 
 </code></pre>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">SELECT with JOINs</span>
-                                <button class="copy-btn" data-clipboard-target="#select-joins-ops">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="select-joins-ops" class="language-csharp">
+            <div class="code-example">
+                <div class="code-header">
+                    <span class="code-language">SELECT with JOINs</span>
+                    <button class="copy-btn" data-clipboard-target="#select-joins-ops">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div class="code-editor">
+                    <pre class="line-numbers"><code id="select-joins-ops" class="language-csharp">
 
 // Multiple JOINs
 var fullProductInfo = SqlQuery.SelectWithJoins&lt;Product&gt;()
@@ -550,11 +567,11 @@ var fullProductInfo = SqlQuery.SelectWithJoins&lt;Product&gt;()
     .Where(p => p.IsActive == true)
     .OrderBy(p => p.Name)
     .Build();</code></pre>
-                            </div>
-                            <div class="output-display">
-                                <div class="output-header">Generated SQL Output:</div>
-                                <div class="output-content">
-                                    <pre><code class="language-sql">
+                </div>
+                <div class="output-display">
+                    <div class="output-header">Generated SQL Output:</div>
+                    <div class="output-content">
+                        <pre><code class="language-sql">
 SELECT product.*
 FROM [Product] AS product
 INNER JOIN [Category] AS category ON product.Id = category.Id
@@ -565,24 +582,24 @@ ORDER BY product.[Name] ASC
 Parameters: @p0=True
 
       </code></pre>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <!-- INSERT Operations -->
-                    <div class="operation-category">
-                        <h3><i class="fas fa-plus"></i> INSERT Operations</h3>
-                        
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">Single and Bulk INSERT</span>
-                                <button class="copy-btn" data-clipboard-target="#insert-operations-ops">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="insert-operations-ops" class="language-csharp">// Single INSERT
+        <!-- INSERT Operations -->
+        <div class="operation-category">
+            <h3><i class="fas fa-plus"></i> INSERT Operations</h3>
+
+            <div class="code-example">
+                <div class="code-header">
+                    <span class="code-language">Single and Bulk INSERT</span>
+                    <button class="copy-btn" data-clipboard-target="#insert-operations-ops">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div class="code-editor">
+                    <pre class="line-numbers"><code id="insert-operations-ops" class="language-csharp">// Single INSERT
 var newProduct = new Product 
 { 
     Name = "Gaming Laptop", 
@@ -608,11 +625,11 @@ var bulkInsert = SqlQuery.BulkInsert&lt;Product&gt;()
     .Build();
 
   </code></pre>
-                            </div>
-                            <div class="output-display">
-                                <div class="output-header">Generated SQL Output:</div>
-                                <div class="output-content">
-                                    <pre><code class="language-sql">
+                </div>
+                <div class="output-display">
+                    <div class="output-header">Generated SQL Output:</div>
+                    <div class="output-content">
+                        <pre><code class="language-sql">
 INSERT INTO [Product]
 ([Name], [Qty], [Price], [CategoryId], [ExtraId], [CreatedAt], [IsActive])
 VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
@@ -629,24 +646,24 @@ __________________________
 Parameters: @p0=Keyboard, @p1=0, @p2=120.00, @p3=2, @p4=0, @p5=22/08/2025 23:55:48, @p6=False,
  @p7=Monitor, @p8=0, @p9=350.00, @p10=3, @p11=0, @p12=22/08/2025 23:55:48, @p13=False, @p14=Headset, @p15=0, @p16=89.99, @p17=2, @p18=0, @p19=22/08/2025 23:55:48, @p20=False
 </code></pre>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <!-- UPDATE Operations -->
-                    <div class="operation-category">
-                        <h3><i class="fas fa-edit"></i> UPDATE Operations</h3>
-                        
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">UPDATE with Conditions</span>
-                                <button class="copy-btn" data-clipboard-target="#update-operations-ops">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="update-operations-ops" class="language-csharp">// Simple UPDATE
+        <!-- UPDATE Operations -->
+        <div class="operation-category">
+            <h3><i class="fas fa-edit"></i> UPDATE Operations</h3>
+
+            <div class="code-example">
+                <div class="code-header">
+                    <span class="code-language">UPDATE with Conditions</span>
+                    <button class="copy-btn" data-clipboard-target="#update-operations-ops">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div class="code-editor">
+                    <pre class="line-numbers"><code id="update-operations-ops" class="language-csharp">// Simple UPDATE
 var updateQuery = SqlQuery.Update&lt;Product&gt;()
     .Set(p => p.Price, 99.99m)
     .Set(p => p.ModifiedAt, DateTime.Now)
@@ -662,11 +679,11 @@ var bulkPriceUpdate = SqlQuery.Update&lt;Product&gt;()
     .Build();
 
 </code></pre>
-                            </div>
-                            <div class="output-display">
-                                <div class="output-header">Generated SQL Output:</div>
-                                <div class="output-content">
-                                    <pre><code class="language-sql">UPDATE Products 
+                </div>
+                <div class="output-display">
+                    <div class="output-header">Generated SQL Output:</div>
+                    <div class="output-content">
+                        <pre><code class="language-sql">UPDATE Products 
 UPDATE product
 SET product.[Price] = @p0, product.[CreatedAt] = @p1
 FROM [Product] AS product
@@ -682,24 +699,24 @@ WHERE (product.[CategoryId] = @p1) AND (product.[IsActive] = @p2) AND (product.[
 ------------------------
 Parameters: @p0=1.1, @p1=1, @p2=True, @p3=-1, @p4=23/08/2025 00:07:34
 </code></pre>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <!-- DELETE Operations -->
-                    <div class="operation-category">
-                        <h3><i class="fas fa-trash"></i> DELETE Operations</h3>
-                        
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">DELETE with Safety Conditions</span>
-                                <button class="copy-btn" data-clipboard-target="#delete-operations-ops">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="delete-operations-ops" class="language-csharp">// Simple DELETE
+        <!-- DELETE Operations -->
+        <div class="operation-category">
+            <h3><i class="fas fa-trash"></i> DELETE Operations</h3>
+
+            <div class="code-example">
+                <div class="code-header">
+                    <span class="code-language">DELETE with Safety Conditions</span>
+                    <button class="copy-btn" data-clipboard-target="#delete-operations-ops">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div class="code-editor">
+                    <pre class="line-numbers"><code id="delete-operations-ops" class="language-csharp">// Simple DELETE
 var deleteQuery = SqlQuery.Delete&lt;Product&gt;()
     .Where(p => p.Id == 1)
     .Build();
@@ -718,25 +735,26 @@ var bulkDelete = SqlQuery.Delete&lt;Product&gt;()
     .Build();
 
 </code></pre>
-                            </div>
-                            <div class="output-display">
-                                <div class="output-header">Generated SQL Output:</div>
-                                <div class="output-content">
-                                    <pre><code class="language-sql">DELETE FROM Products 
+                </div>
+                <div class="output-display">
+                    <div class="output-header">Generated SQL Output:</div>
+                    <div class="output-content">
+                        <pre><code class="language-sql">DELETE FROM Products 
 WHERE ProductId = 1</code></pre>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
+        </div>
         </section>
 
         <!-- Advanced Operations Section -->
         <section class="section" id="advanced-operations">
             <div class="container">
                 <h2 class="section-title">Advanced SQL Operations</h2>
-                <p class="section-description">Real examples from sample-output.txt including Aggregates, Window Functions, Boolean Logic, CTEs, JOINs, and Custom SQL.</p>
+                <p class="section-description">Real examples from sample-output.txt including Aggregates, Window
+                    Functions, Boolean Logic, CTEs, JOINs, and Custom SQL.</p>
 
                 <!-- Aggregate Queries -->
                 <div class="example-item" id="aggregate-queries">
@@ -744,7 +762,7 @@ WHERE ProductId = 1</code></pre>
                         <span class="example-number">8</span>
                         Aggregate Queries with GROUP BY
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -762,7 +780,7 @@ WHERE ProductId = 1</code></pre>
     .Where(p =&gt; p.IsActive);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -787,7 +805,7 @@ Parameters: @p0=True</code></pre>
                         <span class="example-number">9</span>
                         Window Functions
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -805,7 +823,7 @@ Parameters: @p0=True</code></pre>
     .Where(p =&gt; !p.IsActive);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -829,7 +847,7 @@ Parameters: @p0=False</code></pre>
                         <span class="example-number">10</span>
                         Boolean WHERE Clauses
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -848,7 +866,7 @@ var inactiveBoolQuery = SqlQuery.Select&lt;Product&gt;()
     .Where(p =&gt; !p.IsActive);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -879,7 +897,7 @@ Parameters: @p0=False</code></pre>
                         <span class="example-number">11</span>
                         Advanced CTE Example
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -901,7 +919,7 @@ var advancedQuery = SqlQuery.Advanced&lt;Product&gt;()
     .Query(mainQuery);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -928,7 +946,7 @@ Parameters: @p0=1, @p1=2</code></pre>
                         <span class="example-number">12</span>
                         INNER JOIN - Products with Categories
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -944,7 +962,7 @@ Parameters: @p0=1, @p1=2</code></pre>
     .OrderBy(p =&gt; p.Name);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -970,7 +988,7 @@ Parameters: @p0=True</code></pre>
                         <span class="example-number">13</span>
                         WHERE IN with Subquery
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -989,7 +1007,7 @@ var productsInExpensiveCategoriesQuery = SqlQuery.Select&lt;Product&gt;()
     .OrderBy(p =&gt; p.Name);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -1017,7 +1035,7 @@ Parameters: @p0=500</code></pre>
                         <span class="example-number">14</span>
                         Window Functions with JOINs
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -1036,7 +1054,7 @@ Parameters: @p0=500</code></pre>
     .ThenBy(p =&gt; p.Price);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -1062,7 +1080,7 @@ Parameters: @p0=True</code></pre>
                         <span class="example-number">15</span>
                         Ultimate Complex Query with CTEs and JOINs
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -1101,7 +1119,7 @@ var ultimateComplexQuery = SqlQuery.Advanced&lt;Product&gt;()
     .Query(complexMainQuery);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -1134,7 +1152,7 @@ Parameters: @p0=300, @p1=True, @p2=100</code></pre>
                         <span class="example-number">16</span>
                         Custom Raw SQL with Advanced Parameters
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -1171,7 +1189,7 @@ Parameters: @p0=300, @p1=True, @p2=100</code></pre>
     });</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -1218,7 +1236,7 @@ Parameters: @startDate=22/02/2025 17:34:39, @isActive=True, @minPrice=50.00</cod
                         <span class="example-number">1</span>
                         Basic SELECT Query
                     </h3>
-                    
+
                     <div class="example-container">
                         <div class="code-example">
                             <div class="code-header">
@@ -1233,7 +1251,7 @@ Parameters: @startDate=22/02/2025 17:34:39, @isActive=True, @minPrice=50.00</cod
     .OrderBy(p =&gt; p.Name);</code></pre>
                             </div>
                         </div>
-                        
+
                         <div class="output-example">
                             <div class="output-header">
                                 <span class="output-language">SQL Output</span>
@@ -1249,33 +1267,33 @@ ORDER BY product.[Name] ASC
 Parameters: @p0=True</code></pre>
                             </div>
                         </div>
-                   
-</code></pre>
-                            </div>
-                          
-                        </div>
+
+                        </code></pre>
                     </div>
+
                 </div>
+            </div>
+            </div>
             </div>
         </section>
 
         <!-- Validation Section -->
-                <div class="example-item" id="complex-where">
-                    <h3 class="example-title">
-                        <span class="example-number">2</span>
-                        Complex WHERE Conditions
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#complex-where-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="complex-where-code" class="language-csharp">var searchTerms = new List&lt;string&gt; { "laptop", "phone", "tablet" };
+        <div class="example-item" id="complex-where">
+            <h3 class="example-title">
+                <span class="example-number">2</span>
+                Complex WHERE Conditions
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#complex-where-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="complex-where-code" class="language-csharp">var searchTerms = new List&lt;string&gt; { "laptop", "phone", "tablet" };
 var categoryIds = new List&lt;int&gt; { 1, 2, 3 };
 
 var complexWhere = SqlQuery.Select&lt;Product&gt;()
@@ -1283,18 +1301,18 @@ var complexWhere = SqlQuery.Select&lt;Product&gt;()
     .Where(p =&gt; categoryIds.Contains(p.CategoryId))
     .Where(p =&gt; p.Price &gt;= 100 &amp;&amp; p.Price &lt;= 1000)
     .OrderBy(p =&gt; p.Price);</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#complex-where-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="complex-where-output" class="language-sql">SELECT product.*
+                    </div>
+                </div>
+
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#complex-where-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="complex-where-output" class="language-sql">SELECT product.*
 FROM [Product] AS product
 WHERE (product.[Name] LIKE @p0 OR product.[Name] IN (@p1, @p2, @p3)) 
   AND product.[CategoryId] IN (@p4, @p5, @p6) 
@@ -1302,69 +1320,69 @@ WHERE (product.[Name] LIKE @p0 OR product.[Name] IN (@p1, @p2, @p3))
 ORDER BY product.[Price] ASC
 Parameters: @p0=%electronics%, @p1=laptop, @p2=phone, @p3=tablet, 
            @p4=1, @p5=2, @p6=3, @p7=100, @p8=1000</code></pre>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- UPDATE Query -->
-                <div class="example-item" id="update-query">
-                    <h3 class="example-title">
-                        <span class="example-number">3</span>
-                        UPDATE Query
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#update-query-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="update-query-code" class="language-csharp">var updateQuery = SqlQuery.Update&lt;Product&gt;()
+        <!-- UPDATE Query -->
+        <div class="example-item" id="update-query">
+            <h3 class="example-title">
+                <span class="example-number">3</span>
+                UPDATE Query
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#update-query-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="update-query-code" class="language-csharp">var updateQuery = SqlQuery.Update&lt;Product&gt;()
     .Set(p =&gt; p.Price, 199.99m)
     .Set(p =&gt; p.IsActive, true)
     .Where(p =&gt; p.CategoryId == 1 &amp;&amp; p.Price &lt; 200);</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#update-query-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="update-query-output" class="language-sql">UPDATE product
+                    </div>
+                </div>
+
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#update-query-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="update-query-output" class="language-sql">UPDATE product
 SET product.[Price] = @p0, product.[IsActive] = @p1
 FROM [Product] AS product
 WHERE ((product.[CategoryId] = @p2) AND (product.[Price] &lt; @p3))
 Parameters: @p0=199.99, @p1=True, @p2=1, @p3=200</code></pre>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- INSERT Query -->
-                <div class="example-item" id="insert-query">
-                    <h3 class="example-title">
-                        <span class="example-number">4</span>
-                        INSERT Query
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#insert-query-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="insert-query-code" class="language-csharp">var newProduct = new Product
+        <!-- INSERT Query -->
+        <div class="example-item" id="insert-query">
+            <h3 class="example-title">
+                <span class="example-number">4</span>
+                INSERT Query
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#insert-query-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="insert-query-code" class="language-csharp">var newProduct = new Product
 {
     Name = "New Laptop",
     Qty = 10,
@@ -1376,217 +1394,217 @@ Parameters: @p0=199.99, @p1=True, @p2=1, @p3=200</code></pre>
 
 var insertQuery = SqlQuery.Insert&lt;Product&gt;()
     .Values(newProduct);</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#insert-query-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="insert-query-output" class="language-sql">INSERT INTO [Product]
+                    </div>
+                </div>
+
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#insert-query-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="insert-query-output" class="language-sql">INSERT INTO [Product]
 ([Name], [Qty], [Price], [CategoryId], [ExtraId], [CreatedAt], [IsActive])
 VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
 Parameters: @p0=New Laptop, @p1=10, @p2=999.99, @p3=1, @p4=1, 
            @p5=01/01/0001 00:00:00, @p6=True</code></pre>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DELETE Query -->
+        <div class="example-item" id="delete-query">
+            <h3 class="example-title">
+                <span class="example-number">5</span>
+                DELETE Query
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#delete-query-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="delete-query-code" class="language-csharp">var deleteQuery = SqlQuery.Delete&lt;Product&gt;()
+    .Where(p =&gt; p.IsActive == false)
+    .Where(p =&gt; p.CreatedAt &lt; DateTime.Now.AddYears(-1));</code></pre>
                     </div>
                 </div>
 
-                <!-- DELETE Query -->
-                <div class="example-item" id="delete-query">
-                    <h3 class="example-title">
-                        <span class="example-number">5</span>
-                        DELETE Query
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#delete-query-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="delete-query-code" class="language-csharp">var deleteQuery = SqlQuery.Delete&lt;Product&gt;()
-    .Where(p =&gt; p.IsActive == false)
-    .Where(p =&gt; p.CreatedAt &lt; DateTime.Now.AddYears(-1));</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#delete-query-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="delete-query-output" class="language-sql">DELETE product
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#delete-query-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="delete-query-output" class="language-sql">DELETE product
 FROM [Product] AS product
 WHERE (product.[IsActive] = @p0) AND (product.[CreatedAt] &lt; DATEADD(year, @p1, @p2))
 Parameters: @p0=False, @p1=-1, @p2=22/08/2025 17:34:39</code></pre>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Aggregate Queries -->
-                <div class="example-item" id="aggregate-queries">
-                    <h3 class="example-title">
-                        <span class="example-number">6</span>
-                        Aggregate Queries
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#aggregate-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="aggregate-code" class="language-csharp">var queryAggregate = SqlQuery.Aggregate&lt;Product&gt;()
+        <!-- Aggregate Queries -->
+        <div class="example-item" id="aggregate-queries">
+            <h3 class="example-title">
+                <span class="example-number">6</span>
+                Aggregate Queries
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#aggregate-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="aggregate-code" class="language-csharp">var queryAggregate = SqlQuery.Aggregate&lt;Product&gt;()
     .GroupBy(p =&gt; p.CategoryId)
     .Count(alias: "ProductCount")
     .Sum(p =&gt; p.Price, "TotalPrice")
     .Average(p =&gt; p.Price, "AvgPrice")
     .Where(p =&gt; p.IsActive);</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#aggregate-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="aggregate-output" class="language-sql">SELECT product.[CategoryId], COUNT(*) AS [ProductCount], 
+                    </div>
+                </div>
+
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#aggregate-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="aggregate-output" class="language-sql">SELECT product.[CategoryId], COUNT(*) AS [ProductCount], 
        SUM(product.[Price]) AS [TotalPrice], 
        AVG(product.[Price]) AS [AvgPrice]
 FROM [Product] AS product
 WHERE (product.[IsActive] = @p0)
 GROUP BY product.[CategoryId]
 Parameters: @p0=True</code></pre>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Window Functions -->
-                <div class="example-item" id="window-functions">
-                    <h3 class="example-title">
-                        <span class="example-number">7</span>
-                        Window Functions
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#window-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="window-code" class="language-csharp">var queryWindowFunction = SqlQuery.WindowFunction&lt;Product&gt;()
+        <!-- Window Functions -->
+        <div class="example-item" id="window-functions">
+            <h3 class="example-title">
+                <span class="example-number">7</span>
+                Window Functions
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#window-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="window-code" class="language-csharp">var queryWindowFunction = SqlQuery.WindowFunction&lt;Product&gt;()
     .Select(p =&gt; p.Name)
     .Select(p =&gt; p.Price)
     .RowNumber(p =&gt; p.CategoryId, p =&gt; p.Price, "RowNum")
     .Rank(p =&gt; p.CategoryId, p =&gt; p.Price, "PriceRank")
     .Where(p =&gt; !p.IsActive);</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#window-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="window-output" class="language-sql">SELECT product.[Name], product.[Price], 
+                    </div>
+                </div>
+
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#window-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="window-output" class="language-sql">SELECT product.[Name], product.[Price], 
        ROW_NUMBER() OVER (PARTITION BY product.[CategoryId] ORDER BY product.[Price]) AS [RowNum], 
        RANK() OVER (PARTITION BY product.[CategoryId] ORDER BY product.[Price]) AS [PriceRank]
 FROM [Product] AS product
 WHERE (product.[IsActive] = @p0)
 Parameters: @p0=False</code></pre>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- JOIN Operations -->
-                <div class="example-item" id="joins">
-                    <h3 class="example-title">
-                        <span class="example-number">8</span>
-                        JOIN Operations
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#join-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="join-code" class="language-csharp">var multiJoinQuery = SqlQuery.SelectWithJoins&lt;Product&gt;()
+        <!-- JOIN Operations -->
+        <div class="example-item" id="joins">
+            <h3 class="example-title">
+                <span class="example-number">8</span>
+                JOIN Operations
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#join-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="join-code" class="language-csharp">var multiJoinQuery = SqlQuery.SelectWithJoins&lt;Product&gt;()
     .InnerJoin&lt;Category&gt;("cat", (p, c) =&gt; p.CategoryId == c.Id)
     .LeftJoin&lt;ProductExtraDetails&gt;("details", (p, d) =&gt; p.ExtraId == d.Id)
     .Where&lt;Product&gt;(p =&gt; p.Price &gt; 100)
     .OrderBy(p =&gt; p.Price)
     .ThenBy(p =&gt; p.Name);</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#join-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="join-output" class="language-sql">SELECT product.*
+                    </div>
+                </div>
+
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#join-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="join-output" class="language-sql">SELECT product.*
 FROM [Product] AS product
 INNER JOIN [Category] AS cat ON product.Id = cat.Id
 LEFT JOIN [ProductExtraDetails] AS details ON product.Id = details.Id
 WHERE (product.[Price] &gt; @p0)
 ORDER BY product.[Price] ASC, product.[Name] ASC
 Parameters: @p0=100</code></pre>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- CTE Examples -->
-                <div class="example-item" id="cte">
-                    <h3 class="example-title">
-                        <span class="example-number">9</span>
-                        Advanced CTE Example
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#cte-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="cte-code" class="language-csharp">var cteQuery = SqlQuery.Select&lt;Product&gt;()
+        <!-- CTE Examples -->
+        <div class="example-item" id="cte">
+            <h3 class="example-title">
+                <span class="example-number">9</span>
+                Advanced CTE Example
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#cte-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="cte-code" class="language-csharp">var cteQuery = SqlQuery.Select&lt;Product&gt;()
     .Where(p =&gt; p.Qty &gt;= 1)
     .Top(10);
 
@@ -1596,73 +1614,73 @@ var mainQuery = SqlQuery.Select&lt;Product&gt;()
 var advancedQuery = SqlQuery.Advanced&lt;Product&gt;()
     .WithCTE("TopProducts", cteQuery)
     .Query(mainQuery);</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#cte-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="cte-output" class="language-sql">WITH TopProducts AS (SELECT TOP (10) product.*
+                    </div>
+                </div>
+
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#cte-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="cte-output" class="language-sql">WITH TopProducts AS (SELECT TOP (10) product.*
 FROM [Product] AS product
 WHERE (product.[Qty] &gt;= @p0))
 SELECT product.*
 FROM [Product] AS product
 WHERE (product.[CategoryId] = @p1)
 Parameters: @p0=1, @p1=2</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Raw SQL -->
-                <div class="example-item" id="raw-sql">
-                    <h3 class="example-title">
-                        <span class="example-number">10</span>
-                        Raw SQL Example
-                    </h3>
-                    
-                    <div class="example-container">
-                        <div class="code-example">
-                            <div class="code-header">
-                                <span class="code-language">C# Code</span>
-                                <button class="copy-btn" data-clipboard-target="#raw-code">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="code-editor">
-                                <pre class="line-numbers"><code id="raw-code" class="language-csharp">var rawQuery = SqlQuery.Raw(
-    "SELECT * FROM Product WHERE Price BETWEEN @minPrice AND @maxPrice",
-    new { minPrice = 100, maxPrice = 500 }
-);</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="output-example">
-                            <div class="output-header">
-                                <span class="output-language">SQL Output</span>
-                                <button class="copy-btn" data-clipboard-target="#raw-output">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="output-editor">
-                                <pre class="line-numbers"><code id="raw-output" class="language-sql">SELECT * FROM Product WHERE Price BETWEEN @minPrice AND @maxPrice
-Parameters: @minPrice=100, @maxPrice=500</code></pre>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Raw SQL -->
+        <div class="example-item" id="raw-sql">
+            <h3 class="example-title">
+                <span class="example-number">10</span>
+                Raw SQL Example
+            </h3>
+
+            <div class="example-container">
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-language">C# Code</span>
+                        <button class="copy-btn" data-clipboard-target="#raw-code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="line-numbers"><code id="raw-code" class="language-csharp">var rawQuery = SqlQuery.Raw(
+    "SELECT * FROM Product WHERE Price BETWEEN @minPrice AND @maxPrice",
+    new { minPrice = 100, maxPrice = 500 }
+);</code></pre>
+                    </div>
+                </div>
+
+                <div class="output-example">
+                    <div class="output-header">
+                        <span class="output-language">SQL Output</span>
+                        <button class="copy-btn" data-clipboard-target="#raw-output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-editor">
+                        <pre class="line-numbers"><code id="raw-output" class="language-sql">SELECT * FROM Product WHERE Price BETWEEN @minPrice AND @maxPrice
+Parameters: @minPrice=100, @maxPrice=500</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
         </section>
         <!-- Supported Attributes Section -->
         <section class="section" id="attributes">
             <div class="container">
                 <h2 class="section-title">Supported Attributes</h2>
-                
+
                 <div class="attributes-grid">
                     <div class="attribute-card">
                         <h4><code>[TableName]</code></h4>
@@ -1704,7 +1722,7 @@ Parameters: @minPrice=100, @maxPrice=500</code></pre>
         <section class="section" id="sql-dialects">
             <div class="container">
                 <h2 class="section-title">SQL Dialect Support</h2>
-                
+
                 <div class="example-container">
                     <div class="code-example">
                         <div class="code-header">
@@ -1735,7 +1753,7 @@ var query = SqlQuery.Select&lt;Product&gt;(SqlDialectConfig.SQLite);</code></pre
         <section class="section" id="advanced-features">
             <div class="container">
                 <h2 class="section-title">Advanced Features</h2>
-                
+
                 <div class="feature-showcase">
                     <div class="feature-item">
                         <h3>OrWhere Support</h3>
@@ -1783,7 +1801,7 @@ var query = SqlQuery.Select&lt;Product&gt;(SqlDialectConfig.SQLite);</code></pre
         <section class="section" id="validation">
             <div class="container">
                 <h2 class="section-title">Query Validation</h2>
-                
+
                 <div class="example-container">
                     <div class="code-example">
                         <div class="code-header">
@@ -1814,7 +1832,7 @@ if (issues.Any())
         <section class="section" id="debugging">
             <div class="container">
                 <h2 class="section-title">Debug and Testing</h2>
-                
+
                 <div class="example-container">
                     <div class="code-example">
                         <div class="code-header">
@@ -1845,7 +1863,7 @@ var (sql, parameters) = query.Build();</code></pre>
         <section class="section" id="stored-procedures">
             <div class="container">
                 <h2 class="section-title">Stored Procedure Calls</h2>
-                
+
                 <div class="example-container">
                     <div class="code-example">
                         <div class="code-header">
@@ -1886,13 +1904,14 @@ var (sql, parameters) = query.Build();</code></pre>
         <section class="section" id="api-reference">
             <div class="container">
                 <h2 class="section-title">Complete API Reference</h2>
-                <p class="section-description">Comprehensive reference for all LambdifySQL classes, methods, and extension points.</p>
+                <p class="section-description">Comprehensive reference for all LambdifySQL classes, methods, and
+                    extension points.</p>
 
                 <div class="api-reference-grid">
                     <!-- SqlQuery Entry Points -->
                     <div class="api-reference-section">
                         <h3><i class="fas fa-code"></i> SqlQuery Entry Points</h3>
-                        
+
                         <div class="api-method">
                             <h4>SqlQuery.Select&lt;T&gt;()</h4>
                             <p>Creates a SELECT query builder for the specified entity type.</p>
@@ -2030,22 +2049,29 @@ var (sql, parameters) = query.Build();</code></pre>
                     <!-- Query Builder Interfaces -->
                     <div class="api-reference-section">
                         <h3><i class="fas fa-cogs"></i> Core Interfaces</h3>
-                        
+
                         <div class="interface-item">
                             <h4>ISelectQueryBuilder&lt;T&gt;</h4>
                             <p>Interface for building SELECT queries with fluent syntax.</p>
                             <div class="interface-methods">
                                 <h5>Key Methods:</h5>
                                 <ul>
-                                    <li><code>Where(Expression&lt;Func&lt;T, bool&gt;&gt; predicate)</code> - Add WHERE conditions</li>
-                                    <li><code>OrWhere(Expression&lt;Func&lt;T, bool&gt;&gt; predicate)</code> - Add OR WHERE conditions</li>
-                                    <li><code>OrderBy&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt; selector)</code> - Order results</li>
-                                    <li><code>OrderByDescending&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt; selector)</code> - Order descending</li>
-                                    <li><code>ThenBy&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt; selector)</code> - Secondary ordering</li>
-                                    <li><code>ThenByDescending&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt; selector)</code> - Secondary ordering descending</li>
+                                    <li><code>Where(Expression&lt;Func&lt;T, bool&gt;&gt; predicate)</code> - Add WHERE
+                                        conditions</li>
+                                    <li><code>OrWhere(Expression&lt;Func&lt;T, bool&gt;&gt; predicate)</code> - Add OR
+                                        WHERE conditions</li>
+                                    <li><code>OrderBy&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt; selector)</code>
+                                        - Order results</li>
+                                    <li><code>OrderByDescending&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt; selector)</code>
+                                        - Order descending</li>
+                                    <li><code>ThenBy&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt; selector)</code>
+                                        - Secondary ordering</li>
+                                    <li><code>ThenByDescending&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt; selector)</code>
+                                        - Secondary ordering descending</li>
                                     <li><code>Top(int count)</code> - Limit results (SQL Server style)</li>
                                     <li><code>Take(int count)</code> - Limit results</li>
-                                    <li><code>WhereIn&lt;TProperty, TSubQuery&gt;(...)</code> - WHERE IN with subquery</li>
+                                    <li><code>WhereIn&lt;TProperty, TSubQuery&gt;(...)</code> - WHERE IN with subquery
+                                    </li>
                                     <li><code>WhereRaw(string rawCondition)</code> - Raw WHERE clause</li>
                                     <li><code>FromCTE(string cteName)</code> - Select from CTE</li>
                                 </ul>
@@ -2058,20 +2084,34 @@ var (sql, parameters) = query.Build();</code></pre>
                             <div class="interface-methods">
                                 <h5>Key Methods:</h5>
                                 <ul>
-                                    <li><code>InnerJoin&lt;TJoin&gt;(Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code></li>
-                                    <li><code>InnerJoin&lt;TJoin&gt;(string alias, Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code></li>
-                                    <li><code>LeftJoin&lt;TJoin&gt;(Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code></li>
-                                    <li><code>LeftJoin&lt;TJoin&gt;(string alias, Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code></li>
-                                    <li><code>RightJoin&lt;TJoin&gt;(Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code></li>
-                                    <li><code>RightJoin&lt;TJoin&gt;(string alias, Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code></li>
-                                    <li><code>FullOuterJoin&lt;TJoin&gt;(Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code></li>
-                                    <li><code>FullOuterJoin&lt;TJoin&gt;(string alias, Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code></li>
-                                    <li><code>Where&lt;TEntity&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code></li>
-                                    <li><code>Where&lt;TEntity&gt;(string alias, Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code></li>
-                                    <li><code>OrWhere&lt;TEntity&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code></li>
-                                    <li><code>OrderBy&lt;TEntity, TProperty&gt;(Expression&lt;Func&lt;TEntity, TProperty&gt;&gt; selector)</code></li>
-                                    <li><code>GroupBy&lt;TEntity, TProperty&gt;(Expression&lt;Func&lt;TEntity, TProperty&gt;&gt; selector)</code></li>
-                                    <li><code>Having&lt;TEntity&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code></li>
+                                    <li><code>InnerJoin&lt;TJoin&gt;(Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code>
+                                    </li>
+                                    <li><code>InnerJoin&lt;TJoin&gt;(string alias, Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code>
+                                    </li>
+                                    <li><code>LeftJoin&lt;TJoin&gt;(Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code>
+                                    </li>
+                                    <li><code>LeftJoin&lt;TJoin&gt;(string alias, Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code>
+                                    </li>
+                                    <li><code>RightJoin&lt;TJoin&gt;(Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code>
+                                    </li>
+                                    <li><code>RightJoin&lt;TJoin&gt;(string alias, Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code>
+                                    </li>
+                                    <li><code>FullOuterJoin&lt;TJoin&gt;(Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code>
+                                    </li>
+                                    <li><code>FullOuterJoin&lt;TJoin&gt;(string alias, Expression&lt;Func&lt;T, TJoin, bool&gt;&gt; condition)</code>
+                                    </li>
+                                    <li><code>Where&lt;TEntity&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code>
+                                    </li>
+                                    <li><code>Where&lt;TEntity&gt;(string alias, Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code>
+                                    </li>
+                                    <li><code>OrWhere&lt;TEntity&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code>
+                                    </li>
+                                    <li><code>OrderBy&lt;TEntity, TProperty&gt;(Expression&lt;Func&lt;TEntity, TProperty&gt;&gt; selector)</code>
+                                    </li>
+                                    <li><code>GroupBy&lt;TEntity, TProperty&gt;(Expression&lt;Func&lt;TEntity, TProperty&gt;&gt; selector)</code>
+                                    </li>
+                                    <li><code>Having&lt;TEntity&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt; predicate)</code>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -2081,7 +2121,8 @@ var (sql, parameters) = query.Build();</code></pre>
                             <p>Concrete class for advanced query operations including CTEs.</p>
                             <div class="interface-methods">
                                 <h5>Note:</h5>
-                                <p>This is a concrete builder class, not an interface. Check the actual implementation for available methods.</p>
+                                <p>This is a concrete builder class, not an interface. Check the actual implementation
+                                    for available methods.</p>
                             </div>
                         </div>
                     </div>
@@ -2089,7 +2130,7 @@ var (sql, parameters) = query.Build();</code></pre>
                     <!-- Entity Attributes -->
                     <div class="api-reference-section">
                         <h3><i class="fas fa-tags"></i> Entity Attributes</h3>
-                        
+
                         <div class="attribute-item">
                             <h4>[TableName(string tableName, string alias = null)]</h4>
                             <p>Maps a class to a database table with optional alias.</p>
@@ -2110,7 +2151,8 @@ public int Id { get; set; }</code></pre>
 
                         <div class="attribute-item">
                             <h4>[Column(string columnName)]</h4>
-                            <p>Maps a property to a specific database column. Supports MaxLength, DataType, and IsNullable properties.</p>
+                            <p>Maps a property to a specific database column. Supports MaxLength, DataType, and
+                                IsNullable properties.</p>
                             <div class="attribute-example">
                                 <pre><code class="language-csharp">[Column("ProductName", MaxLength = 100, DataType = "NVARCHAR")]
 public string Name { get; set; }</code></pre>
@@ -2119,7 +2161,8 @@ public string Name { get; set; }</code></pre>
 
                         <div class="attribute-item">
                             <h4>[Relation(Type type)]</h4>
-                            <p>Defines relationships between entities. Supports ForeignKey and ReferencedKey properties.</p>
+                            <p>Defines relationships between entities. Supports ForeignKey and ReferencedKey properties.
+                            </p>
                             <div class="attribute-example">
                                 <pre><code class="language-csharp">[Relation(typeof(Category), ForeignKey = "CategoryId", ReferencedKey = "Id")]
 public int CategoryId { get; set; }</code></pre>
@@ -2155,7 +2198,8 @@ public bool IsActive { get; set; }</code></pre>
 
                         <div class="attribute-item">
                             <h4>[Index(string indexName = null)]</h4>
-                            <p>Indicates that the property should be indexed. Supports IsUnique, IsClustered, and Order properties.</p>
+                            <p>Indicates that the property should be indexed. Supports IsUnique, IsClustered, and Order
+                                properties.</p>
                             <div class="attribute-example">
                                 <pre><code class="language-csharp">[Index("IX_Product_SKU", IsUnique = true, Order = 1)]
 public string SKU { get; set; }</code></pre>
@@ -2184,10 +2228,11 @@ public string FullDisplayName { get; set; }</code></pre>
                     <!-- SQL Dialect Configuration -->
                     <div class="api-reference-section">
                         <h3><i class="fas fa-database"></i> SQL Dialect Support</h3>
-                        
+
                         <div class="dialect-item">
                             <h4>SqlDialectConfig</h4>
-                            <p>Configuration class for different SQL dialects with specific settings for each database.</p>
+                            <p>Configuration class for different SQL dialects with specific settings for each database.
+                            </p>
                             <div class="dialect-options">
                                 <h5>Available Dialects:</h5>
                                 <ul>
@@ -2240,7 +2285,7 @@ public string FullDisplayName { get; set; }</code></pre>
                     <!-- Extension Methods -->
                     <div class="api-reference-section">
                         <h3><i class="fas fa-puzzle-piece"></i> Extension Methods</h3>
-                        
+
                         <div class="extension-item">
                             <h4>Build() Extension</h4>
                             <p>Converts a query builder to a tuple containing SQL and parameters.</p>
@@ -2268,7 +2313,7 @@ var parameters = query.GetParameters();</code></pre>
                     <!-- Performance and Best Practices -->
                     <div class="api-reference-section">
                         <h3><i class="fas fa-tachometer-alt"></i> Performance Guidelines</h3>
-                        
+
                         <div class="performance-tips">
                             <div class="tip-card">
                                 <h4><i class="fas fa-bolt"></i> Query Optimization</h4>
@@ -2312,38 +2357,39 @@ var parameters = query.GetParameters();</code></pre>
                 <div class="author-biography">
                     <div class="author-content">
                         <div class="author-image">
-                            <img src="https://via.placeholder.com/200x200/6366f1/ffffff?text=Author" alt="Library Author" class="author-photo">
+                            <img src="./photo/Oscar.jpg" alt="Library Author" class="author-photo">
                             <div class="author-badge">
                                 <i class="fas fa-code"></i>
                                 <span>Lead Developer</span>
                             </div>
                         </div>
-                        
+
                         <div class="author-info">
-                            <h3 class="author-name">John Developer</h3>
+                            <h3 class="author-name">Oscar Itaba</h3>
                             <p class="author-title">Senior Software Engineer & Open Source Contributor</p>
-                            
+
                             <div class="author-description">
                                 <p>
-                                    With over 8 years of experience in .NET development and database technologies, 
-                                    John is passionate about creating tools that simplify complex data operations. 
-                                    He specializes in building high-performance applications and has extensive 
+                                    With over 16+ years of experience in .NET development and database technologies,
+                                    Oscar is passionate about creating tools that simplify complex data operations.
+                                    He specializes in building high-performance applications and has extensive
                                     experience with Entity Framework, SQL Server, PostgreSQL, and MySQL.
                                 </p>
-                                
+
                                 <p>
-                                    LambdifySQL was born from his frustration with existing ORM limitations and 
-                                    the need for a more flexible, type-safe SQL query builder. The library combines 
-                                    the power of LINQ expressions with direct SQL control, making it easier for 
+                                    LambdifySQL was born from his frustration with existing ORM limitations and
+                                    the need for a more flexible, type-safe SQL query builder. The library combines
+                                    the power of LINQ expressions with direct SQL control, making it easier for
                                     developers to write maintainable and performant database queries.
                                 </p>
-                                
+
                                 <p>
-                                    When not coding, John enjoys mentoring junior developers, contributing to 
-                                    open-source projects, and exploring new technologies in the .NET ecosystem.
+                                    When not coding, Oscar enjoys mentoring junior developers, contributing to
+                                    open-source projects, and exploring new technologies in the .NET ecosystem, Node and
+                                    Typescript
                                 </p>
                             </div>
-                            
+                            <!--                             
                             <div class="author-stats">
                                 <div class="stat-item">
                                     <i class="fas fa-code-branch"></i>
@@ -2365,36 +2411,27 @@ var parameters = query.GetParameters();</code></pre>
                                     <span class="stat-number">50K+</span>
                                     <span class="stat-label">NuGet Downloads</span>
                                 </div>
-                            </div>
-                            
+                            </div> -->
+
                             <div class="author-links">
-                                <a href="https://github.com/johndeveloper" class="author-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                                <a href="https://linkedin.com/in/johndeveloper" class="author-link" target="_blank">
+
+                                <a href="https://www.linkedin.com/in/oscar-itaba-4b5107a0" class="author-link"
+                                    target="_blank">
                                     <i class="fab fa-linkedin"></i>
                                     <span>LinkedIn</span>
                                 </a>
-                                <a href="https://twitter.com/johndeveloper" class="author-link" target="_blank">
-                                    <i class="fab fa-twitter"></i>
-                                    <span>Twitter</span>
-                                </a>
-                                <a href="mailto:john@lambdifysql.com" class="author-link">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Email</span>
-                                </a>
+
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="author-quote">
                         <blockquote>
                             <i class="fas fa-quote-left quote-icon"></i>
-                            <p>"Great software should empower developers to focus on solving business problems, 
-                            not wrestling with technical complexity. LambdifySQL embodies this philosophy by 
-                            providing a clean, intuitive API that doesn't sacrifice performance or flexibility."</p>
-                            <cite>— John Developer, Creator of LambdifySQL</cite>
+                            <p>"Great software should empower developers to focus on solving business problems,
+                                not wrestling with technical complexity. LambdifySQL embodies this philosophy by
+                                providing a clean, intuitive API that doesn't sacrifice performance or flexibility."</p>
+                            <cite>— Oscar, Creator of LambdifySQL</cite>
                         </blockquote>
                     </div>
                 </div>
@@ -2427,10 +2464,13 @@ var parameters = query.GetParameters();</code></pre>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
     <script src="script.js"></script>
     <script src="examples.js"></script>
 </body>
+
 </html>
