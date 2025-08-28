@@ -51,7 +51,7 @@ jobs:
       run: dotnet pack ${{ env.PROJECT_PATH }} --no-build --configuration Release --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
       
     - name: 'Upload package artifacts'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: nuget-packages
         path: ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg
