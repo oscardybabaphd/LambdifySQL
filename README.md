@@ -11,6 +11,9 @@ A powerful, fluent C# library that converts lambda expressions to SQL queries wi
 - **Parameter Safety**: Automatic parameterization prevents SQL injection
 - **Rich Expression Support**: Complex lambda expressions with method calls
 - **OrWhere Support**: Full support for OR conditions in WHERE clauses
+- **Column Selection**: Select specific columns with `.Column<>()` method
+- **Collection Filtering**: Filter by collections using `.WhereIn()` with IEnumerable support
+- **Expression-based Updates**: Use expressions for dynamic UPDATE values with `.Set()`
 - **.NET 8 Ready**: Built for modern .NET with the latest language features
 
 ## Installation
@@ -80,16 +83,57 @@ ORDER BY product.[Price] ASC
 Parameters: @p0=%electronics%, @p1=laptop, @p2=phone, @p3=tablet, @p4=1, @p5=2, @p6=3, @p7=100, @p8=1000
 ```
 
-### 3. UPDATE Query
+### 3. Column Selection and Collection Filtering
 
 ```csharp
+// Select specific columns
+var columnSelect = SqlQuery.Select<Product>()
+    .Column(p => p.Id)
+    .Column(p => p.Name)
+    .Column(p => p.Price)
+    .Where(p => p.IsActive)
+    .OrderBy(p => p.Name);
+
+// Filter by collection using WhereIn
+var categoryIds = new List<int> { 1, 2, 3, 4 };
+var collectionFilter = SqlQuery.Select<Product>()
+    .WhereIn(p => p.CategoryId, categoryIds)
+    .Where(p => p.Price > 100);
+```
+
+**Output (Column Selection):**
+```sql
+SELECT product.[Id], product.[Name], product.[Price]
+FROM [Product] AS product
+WHERE product.[IsActive]
+ORDER BY product.[Name] ASC
+```
+
+**Output (Collection Filtering):**
+```sql
+SELECT product.*
+FROM [Product] AS product
+WHERE (product.[CategoryId] IN (@p0, @p1, @p2, @p3)) AND (product.[Price] > @p4)
+Parameters: @p0=1, @p1=2, @p2=3, @p3=4, @p4=100
+```
+
+### 4. UPDATE Query with Expression-based Set
+
+```csharp
+// Traditional update
 var updateQuery = SqlQuery.Update<Product>()
     .Set(p => p.Price, 199.99m)
     .Set(p => p.IsActive, true)
     .Where(p => p.CategoryId == 1 && p.Price < 200);
+
+// Expression-based update (NEW in v2.0)
+var expressionUpdate = SqlQuery.Update<Product>()
+    .Set(p => p.Price, p => p.Price * 1.1m)  // Increase price by 10%
+    .Set(p => p.Name, p => p.Name + " - Updated")
+    .Where(p => p.CategoryId == 1);
 ```
 
-**Output:**
+**Output (Traditional):**
 ```sql
 UPDATE product
 SET product.[Price] = @p0, product.[IsActive] = @p1
@@ -98,7 +142,16 @@ WHERE ((product.[CategoryId] = @p2) AND (product.[Price] < @p3))
 Parameters: @p0=199.99, @p1=True, @p2=1, @p3=200
 ```
 
-### 4. INSERT Query
+**Output (Expression-based):**
+```sql
+UPDATE product
+SET product.[Price] = (product.[Price] * @p0), product.[Name] = (product.[Name] + @p1)
+FROM [Product] AS product
+WHERE (product.[CategoryId] = @p2)
+Parameters: @p0=1.1, @p1= - Updated, @p2=1
+```
+
+### 5. INSERT Query
 
 ```csharp
 var newProduct = new Product
@@ -123,7 +176,7 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
 Parameters: @p0=New Laptop, @p1=10, @p2=999.99, @p3=1, @p4=1, @p5=01/01/0001 00:00:00, @p6=True
 ```
 
-### 5. DELETE Query
+### 6. DELETE Query
 
 ```csharp
 var deleteQuery = SqlQuery.Delete<Product>()
@@ -139,7 +192,7 @@ WHERE (product.[IsActive] = @p0) AND (product.[CreatedAt] < DATEADD(year, @p1, @
 Parameters: @p0=False, @p1=-1, @p2=22/08/2025 17:34:39
 ```
 
-### 6. Raw SQL Example
+### 7. Raw SQL Example
 
 ```csharp
 var rawQuery = SqlQuery.Raw(
@@ -464,12 +517,8 @@ public class Product
     [Relation(typeof(ProductExtraDetails))]
     public int ExtraId { get; set; }
 
-    [Column("CreatedAt")]
-    [DefaultValue("GETDATE()")]
     public DateTime CreatedAt { get; set; }
 
-    [Column("IsActive")]
-    [DefaultValue(true)]
     public bool IsActive { get; set; }
 }
 ```
@@ -591,37 +640,6 @@ var advancedQuery = SqlQuery.Advanced<Product>()
 
 string sql = advancedQuery.GetSql();
 var parameters = advancedQuery.GetParameters(); // Contains both @p0=1 and @p1=2
-```
-
-## Entity Configuration
-
-Use attributes to configure your entity classes:
-
-```csharp
-[TableName("Product", "p")]
-public class Product
-{
-    [Pk("Id")]
-    [IgnoreMe]
-    public int Id { get; set; }
-
-    [Column("ProductName")]
-    [Required]
-    [MaxLength(100)]
-    public string Name { get; set; }
-
-    [Column("Price")]
-    public decimal Price { get; set; }
-
-    [Relation(typeof(Category))]
-    public int CategoryId { get; set; }
-
-    [Index("IX_Product_CreatedAt")]
-    public DateTime CreatedAt { get; set; }
-
-    [DefaultValue(true)]
-    public bool IsActive { get; set; }
-}
 ```
 
 ## Supported Attributes

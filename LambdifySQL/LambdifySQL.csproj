@@ -1,18 +1,90 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- Target Framework -->
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Description>This library helps C# engineers to write SQL in C# way using lambda expressions</Description>
-    <Copyright>All rights reserved</Copyright>
+    <LangVersion>12.0</LangVersion>
+
+    <!-- Assembly Information -->
     <AssemblyName>LambdifySQL</AssemblyName>
+    <Product>LambdifySQL</Product>
     <Company>Oscar Itaba</Company>
     <Authors>Oscar Itaba</Authors>
-    <PackageReleaseNotes>---LambdifySQL v2.0 - Upgraded to .NET 8 with enhanced lambda expression support for SQL generation</PackageReleaseNotes>
-    <Version>2.0.0</Version>
+    <Copyright>Copyright © Oscar Itaba 2025. All rights reserved.</Copyright>
+
+    <!-- Package Information -->
     <PackageId>LambdifySQL</PackageId>
-    <Product>LambdifySQL</Product>
+    <Version>2.0.0</Version>
+    <PackageVersion>2.0.0</PackageVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+
+    <!-- Package Metadata -->
+    <Title>LambdifySQL - Fluent SQL Query Builder</Title>
+    <Description>A powerful, fluent C# library that converts lambda expressions to SQL queries with support for multiple database dialects. Features include type-safe query building, Column selection, WhereIn with collections, expression-based Set operations, CTEs, Window Functions, and advanced SQL generation.</Description>
+    <Summary>Fluent SQL query builder for .NET 8 with lambda expression support and multiple SQL dialect compatibility.</Summary>
+    <PackageReleaseNotes>
+      LambdifySQL v2.0.0 - Major Release
+
+      NEW FEATURES:
+      - Upgraded to .NET 8.0 with C# 12 support
+      - Column&lt;T&gt;() method for selective column projection
+      - WhereIn() overload accepting collections (IEnumerable&lt;T&gt;)
+      - Set() overload supporting expressions (e.g., Set(p =&gt; p.Price, p =&gt; p.Price * 1.1m))
+      - Enhanced OrWhere support across all query builders
+      - Improved type safety and nullable reference type support
+
+      IMPROVEMENTS:
+      - Better parameter handling and SQL injection prevention
+      - Enhanced expression tree conversion
+      - Support for complex lambda expressions
+      - Improved fluent API consistency
+      - Better error handling and validation
+
+      DIALECTS SUPPORTED:
+      - Microsoft SQL Server
+      - MySQL
+      - PostgreSQL
+      - SQLite
+
+      BREAKING CHANGES:
+      - Minimum .NET version is now 8.0
+      - Namespace changed from LambdaToSQL to LambdifySQL
+      - Some method signatures updated for better type safety
+    </PackageReleaseNotes>
+
+    <!-- Package URLs and Repository -->
+    <PackageProjectUrl>https://github.com/your-username/LambdifySQL</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/your-username/LambdifySQL.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <!-- Package Tags -->
+    <PackageTags>sql;query;builder;fluent;lambda;expression;orm;database;sqlserver;mysql;postgresql;sqlite;csharp;dotnet;net8</PackageTags>
+
+    <!-- Package Icon and Documentation -->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+
+    <!-- Source Link for debugging -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <!-- Include README in package -->
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+  <!-- Source Link -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
+  </ItemGroup>
 
 </Project>
