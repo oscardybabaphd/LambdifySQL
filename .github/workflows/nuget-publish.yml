@@ -80,7 +80,7 @@ jobs:
         for package in ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg
         do
           echo "Publishing $package"
-          dotnet nuget push "$package" --api-key ${{ secrets.NUGET_API_KEY }} --source ${{ env.NUGET_SOURCE_URL }} --skip-duplicate
+          dotnet nuget push "$package" --api-key "${{ secrets.NUGET_API_KEY }}" --source "${{ env.NUGET_SOURCE_URL }}" --skip-duplicate
         done
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
