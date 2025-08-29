@@ -56,8 +56,8 @@
     </PackageReleaseNotes>
 
     <!-- Package URLs and Repository -->
-    <PackageProjectUrl>https://github.com/your-username/LambdifySQL</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/your-username/LambdifySQL.git</RepositoryUrl>
+    <PackageProjectUrl>https://lambdify-sql-docs.vercel.app</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/oscardybabaphd/LambdifySQL.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
